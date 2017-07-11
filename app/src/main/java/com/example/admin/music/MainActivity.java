@@ -75,10 +75,10 @@ public class MainActivity extends AppCompatActivity {
         //  View rootView = inflater.inflate(R.layout.song_list, container, false);
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-        //final ImageButton pause = (ImageButton) findViewById(R.id.pause);
-      // pause.setVisibility(View.INVISIBLE);
-      //  final ImageButton play = (ImageButton) findViewById(R.id.play);
-      //  play.setVisibility(View.INVISIBLE);
+        final ImageButton pause = (ImageButton) findViewById(R.id.pause);
+      pause.setVisibility(View.INVISIBLE);
+       final ImageButton play = (ImageButton) findViewById(R.id.play);
+       play.setVisibility(View.INVISIBLE);
 
 
 
@@ -141,8 +141,8 @@ public class MainActivity extends AppCompatActivity {
 
                     // Start the audio file
                     mMediaPlayer.start();
-                   // play.setVisibility(View.VISIBLE);
-                    //pause.setVisibility(View.VISIBLE);
+                    play.setVisibility(View.VISIBLE);
+                    pause.setVisibility(View.VISIBLE);
 
                     // Setup a listener on the media player, so that we can stop and release the
                     // media player once the sound has finished playing.
@@ -153,22 +153,21 @@ public class MainActivity extends AppCompatActivity {
 
        // return rootView;
 
-       // pause.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-          //  public void onClick(View v) {
-              //  mMediaPlayer.pause();
-          //  }
-      //  });
+        pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMediaPlayer.pause();
+            }
+        });
 
-      //  play.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-          //  public void onClick(View v) {
-            //    mMediaPlayer.start();
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMediaPlayer.start();
 
 
-                //      }
-                //  });
-                //  }
+                      }
+                  });
 
             }
 
